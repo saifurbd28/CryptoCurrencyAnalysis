@@ -1,12 +1,8 @@
 # CryptoCurrencyAnalysis
 
-# Overview
-
-This project is the weekly challenge for week 18 of the Data Science Bootcamp. It allows us to put into practice and showcase the skills learned in Module 18 of the bootcamp: Unsupervised Machine Learning.
-
 # Purpose
 
-Create an analysis for clients who are preparing to get into the cryptocurrency market. The analysis includes cryptocurrencies on the trading market and how they could be grouped to create a classification system. To reduce overfitting, Principal Component Analysis (PCA) was used.
+Create an analysis for the Advisory Services Team at Accountability Accounting company (a prominent investment bank) who is interested in offering a new cryptocurrency investment portfolio for its customers. They’ve asked to create a report that includes what cryptocurrencies are on the trading market and how they could be grouped to create a classification system for this new investment. Since there is no known category for what cryptocurrencies are better, it has been decided to use an unsupervised learning (i.e., PCA) to find out diffent categories within all data followed by supervised classification (i.e., K-means). 
 
 This project had of 4 deliverables:
 
@@ -25,60 +21,22 @@ Files:
 
 ## Deliverable 1: Preprocessing the Data for PCA
 
-The dataset was loaded from the source file and transformations were done to prepare the data for PCA.
+A. The following five preprocessing steps have been performed on the crypto_df DataFrame:
 
-The initial dataframe looked like this:
+    1) All cryptocurrencies that are not being traded are removed.
+    2) The IsTrading column is dropped.
+    3) All the rows that have at least one null value are removed.
+    4) All the rows that do not have coins being mined are removed.
+    5) The CoinName column is dropped.
+ B. A new DataFrame is created that stores all cryptocurrency names from the CoinName column and retains the index from the crypto_df DataFrame.   
+    ![Fig1](https://user-images.githubusercontent.com/100442163/177381409-8abfabc3-c38d-4a70-b760-e81f12a33feb.png)
 
-initial dataframe
+C. The get_dummies() method is used to create variables for the text features, which are then stored in a new DataFrame, X.
 
-After cleaning operations, the dataframe had this look:
+![fig2](https://user-images.githubusercontent.com/100442163/177381834-61b33142-7030-4d5c-a7bf-a9af7ee63c61.png)
 
-encoded dataframe
+D. The features from the X DataFrame have been standardized using the StandardScaler fit_transform() function. 
+E. The dataset was loaded from the source file and transformations were done to prepare the data for PCA.
 
-This final dataframe was the scaled using the code below to be ready for the next deliverable:
 
-# Standardize the data with StandardScaler().
-scaler = StandardScaler()
-crypto_scaled = scaler.fit_transform(crypto_encoded_df)
 
-Deliverable 2: Reducing Data Dimensions Using PCA
-
-Reduced the dimesions of the crypto_scaled dataset to 3 principal components.
-
-The pcs_df dataframe was created as required.
-
-pca = PCA(n_components=3)
-crypto_pca = pca.fit_transform(crypto_scaled)
-pcs_df = pd.DataFrame(data=crypto_pca, columns=['PC 1','PC 2', 'PC 3'], index=crypto_encoded_df.index)
-
-pca dataframe
-Deliverable 3: Clustering Cryptocurrencies Using K-means
-
-Created an elbow chart to find the best value for K from the pcs_df dataframe from the previous deliverable.
-
-elbow curve
-
-Then I ran the K-means algorith with 4 clusters to predict the clusters for the data.
-
-A dataframe with all the data clustered_df was created.
-
-clustered_df = pd.concat([crypto_df,pcs_df, cryptonames_df], axis=1)
-clustered_df['Class']= predictions
-
-clustered_df
-Deliverable 4: Visualizing Cryptocurrencies Results
-
-Visualized the clusters that correspond to the 3 principal components with a 3D scatter chart.
-
-3d scatter
-
-Also created a table using the hvplot.table functionality.
-
-table
-
-The looked at the relationship between Total Coin Supply and Total Coins Mined by scaling those variables and plotting them on a scatter chart.
-
-scatter
-Summary
-
-We provided the client with a list of cryptocurrencies being traded and classified them into 4 clusters.
