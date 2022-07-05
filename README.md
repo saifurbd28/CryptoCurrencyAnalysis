@@ -55,3 +55,13 @@ Created an elbow chart to find the best value for K from the pcs_df dataframe fr
 Then I ran the K-means algorith with 4 clusters to predict the clusters for the data. A dataframe with all the data clustered_df was created.
 
 ![fig7](https://user-images.githubusercontent.com/100442163/177384166-9233ac49-8116-49b5-8392-dc4d47870f53.png)
+
+## Deliverable 4: Visualizing Cryptocurrencies Results
+Using the knowledge of creating scatter plots with Plotly Express and hvplot, I have visualized the distinct groups that correspond to the three principal components I created in Deliverable 2, then I have created a table with all the currently tradable cryptocurrencies using the hvplot.table() function. 
+
+Visualized the clusters that correspond to the 3 principal components with a 3D scatter chart.
+
+![fig8](https://user-images.githubusercontent.com/100442163/177385003-e7105689-062d-4aaf-80cd-c02875c43970.png)
+
+Also created a table using the hvplot.table functionality.
+![fig9](https://user-images.githubusercontent.com/100442163/177385278-dee8a9c3-d6da-4f5a-a061-2524b047daff.png)
