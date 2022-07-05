@@ -38,5 +38,9 @@ C. The get_dummies() method is used to create variables for the text features, w
 D. The features from the X DataFrame have been standardized using the StandardScaler fit_transform() function. 
 E. The dataset was loaded from the source file and transformations were done to prepare the data for PCA.
 
+![fig3](https://user-images.githubusercontent.com/100442163/177382147-8941be0c-ab42-45da-bf88-5267cb3df21e.png)
+
+
+
 
 
