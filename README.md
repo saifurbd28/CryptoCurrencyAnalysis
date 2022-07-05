@@ -65,3 +65,10 @@ Visualized the clusters that correspond to the 3 principal components with a 3D 
 
 Also created a table using the hvplot.table functionality.
 ![fig9](https://user-images.githubusercontent.com/100442163/177385278-dee8a9c3-d6da-4f5a-a061-2524b047daff.png)
+
+The looked at the relationship between Total Coin Supply and Total Coins Mined by scaling those variables and plotting them on a scatter chart.
+![bokeh_plot](https://user-images.githubusercontent.com/100442163/177385532-8a7271a8-6799-44d9-aff1-f24a40e011f3.png)
+
+# Summary
+As per module instructions, I have reduced the dimension of the data up to three principal components. By fetching explained varience for these three principal components, I had  only 6.9% of cryptocurrency data. Using K-means algorithms I classified this 6.9% cryptocurrency data into 4 clusters. 
+
