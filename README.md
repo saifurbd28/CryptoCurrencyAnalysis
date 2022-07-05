@@ -41,6 +41,16 @@ E. The dataset was loaded from the source file and transformations were done to 
 ![fig3](https://user-images.githubusercontent.com/100442163/177382147-8941be0c-ab42-45da-bf88-5267cb3df21e.png)
 
 
+## Deliverable 2: Reducing Data Dimensions Using PCA
+Using the knowledge of how to apply the Principal Component Analysis (PCA) algorithm, I have reduced the dimensions of the DataFrame to three principal components and place these dimensions in a new DataFrame.
+![fig4](https://user-images.githubusercontent.com/100442163/177382880-edc45531-2a22-4510-89ad-2481a91c00a8.png)
 
+## Deliverable 3: Clustering Cryptocurrencies Using K-means
+Using the knowledge of the K-means algorithm, I have created an elbow curve using hvPlot to find the best value for K from the pcs_df DataFrame created in Deliverable 2. Then, I have run the K-means algorithm to predict the K clusters for the cryptocurrencies’ data.
+![fig5](https://user-images.githubusercontent.com/100442163/177383530-d2d68f14-99d2-486b-a502-f419b8a6ada6.png)
+Created an elbow chart to find the best value for K from the pcs_df dataframe from the previous deliverable.
+![fig6](https://user-images.githubusercontent.com/100442163/177383923-bd746426-99b5-4052-b7b8-4a7709403e93.png)
 
+Then I ran the K-means algorith with 4 clusters to predict the clusters for the data. A dataframe with all the data clustered_df was created.
 
+![fig7](https://user-images.githubusercontent.com/100442163/177384166-9233ac49-8116-49b5-8392-dc4d47870f53.png)
